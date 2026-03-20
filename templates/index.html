@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Not My Nana ❤️</title>
+    <title>Jaga Eyang ❤️</title>
     
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/static/logo-192.png" type="image/png">
@@ -163,42 +163,42 @@
         🌙
     </button>
     
-    <h1>❤️ Not My Nana</h1>
-    <p class="subtitle">Check if that message is a scam – for Nana</p>
+    <h1>❤️ Jaga Eyang</h1>
+    <p class="subtitle">Cek apakah pesan itu penipuan – untuk Eyang</p>
 
     <button class="main-btn" ontouchstart="if('vibrate' in navigator) navigator.vibrate(10)" onclick="document.getElementById('file').click()">
-        📸 Choose Screenshot
+        📸 Pilih Screenshot Pesan
     </button>
-    <p class="helper-text">Upload any screenshot. We'll check for scams & fake photos and give you a simple color-coded safety score.</p>
+    <p class="helper-text">Unggah screenshot apa saja. Kami akan cek pesan tersebut, lalu beri skor keamanan sederhana dengan warna.</p>
     
     <input type="file" id="file" accept="image/*" style="display:none" onchange="uploadFile(this)">
 
     <div id="loading" role="status" aria-live="polite">
-        <div class="pulse">❤️ Thinking really hard for Nana...</div>
-        <div style="font-size:18px; margin-top:12px; color:var(--text-muted);">This usually takes 10–25 seconds.<br>Please wait ❤️</div>
+        <div class="pulse">❤️ Memproses screenshot untuk Eyang...</div>
+        <div style="font-size:18px; margin-top:12px; color:var(--text-muted);">Hasil selesai dalam 10-25 detik.<br>Mohon tunggu ❤️</div>
     </div>
 
     <div id="result" role="alert" aria-live="assertive"></div>
 
     <div class="static-legend">
-        <h4 class="legend-title">Color Guide</h4>
+        <h4 class="legend-title">Panduan Warna</h4>
         <div class="legend-grid">
-            <div class="legend-item"><span class="dot" style="background: var(--color-safe);"></span> ✅ Safe / Real</div>
-            <div class="legend-item"><span class="dot" style="background: var(--color-scam);"></span> ❌ Scam! Danger</div>
+            <div class="legend-item"><span class="dot" style="background: var(--color-safe);"></span> ✅ Aman</div>
+            <div class="legend-item"><span class="dot" style="background: var(--color-scam);"></span> ❌ Penipuan! Bahaya</div>
 
-            <div class="legend-item"><span class="dot" style="background: var(--border-ai);"></span> 🤖 Fake photo (AI)</div>
-            <div class="legend-item"><span class="dot" style="background: var(--color-sensitive);"></span> 👨‍👩‍👧‍👦 Talk to family</div>
-            <div class="legend-item"><span class="dot" style="background: var(--color-viral);"></span> 📰 Clickbait News</div>
+            <div class="legend-item"><span class="dot" style="background: var(--border-ai);"></span> 🤖 Foto Komputer (AI)</div>
+            <div class="legend-item"><span class="dot" style="background: var(--color-sensitive);"></span> 👨‍👩‍👧‍👦 Coba tanya keluarga</div>
+            <div class="legend-item"><span class="dot" style="background: var(--color-viral);"></span> 📰 Berita Clickbait</div>
         </div>
     </div>
 
     <div id="history">
-        <h3>📜 Recent Checks by Nana (last 3)</h3>
+        <h3>📜 Pengecekan Eyang (3 terakhir)</h3>
         <p style="font-size:14px; color:var(--text-muted); margin:8px 0 16px; text-align:center;">
-            (Small previews saved privately on your device — they stay until you clear them ❤️)
+            (Pratinjau kecil hasil cek terakhir disimpan di perangkat sampai Eyang hapus ❤️)<br>
         </p>
         <div id="history-list"></div>
-        <button class="clear-btn" onclick="clearHistory()">🗑️ Clear Recent Checks</button>
+        <button class="clear-btn" onclick="clearHistory()">🗑️ Hapus Riwayat Pemeriksaan</button>
     </div>
 
     <button id="show-test-btn" onclick="toggleTestPanel()" 
