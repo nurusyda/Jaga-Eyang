@@ -335,7 +335,7 @@ async def analyze(payload: dict, request: Request):
         return {
             "category": category,
             "is_ai": analysis_data.get("is_ai", False),
-            "dominant_language": analysis_data.get("dominant_language", "en"),
+            "dominant_language": analysis_data.get("dominant_language", "id"),
             "title": empathy_data.get("title", "Check Results"),
             "grandma_reply": empathy_data.get("grandma_reply", "Something went wrong. ❤️")
         }
