@@ -171,7 +171,7 @@ async def manifest():
 
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse(request=request, name="index.html")
 
 # --- ASYNC RETRY HELPER ---
 async def fetch_with_retries(client: httpx.AsyncClient, url: str, json_data: dict, headers: dict, timeout: float, max_retries: int = 3):
