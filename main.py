@@ -225,8 +225,8 @@ async def analyze(payload: dict, request: Request):
     if len(history) >= RATE_LIMIT_REQUESTS:
         logger.warning(f"Rate limit hit for {client_ip}")
         return JSONResponse(status_code=429, content={
-            "title": "☕ Time for a Tea Break?",
-            "grandma_reply": "❤️ Nana, I've been thinking a lot lately! Let's take a tiny break for a minute and then we can check more pictures together. ❤️"
+            "title": "☕ Waktunya Istirahat?",
+            "grandma_reply": "❤️ Eyang, kita sudah mengecek banyak gambar hari ini! Istirahat sebentar ya, coba lagi dalam beberapa menit. ❤️"
         })
     
     history.append(now)
@@ -234,8 +234,8 @@ async def analyze(payload: dict, request: Request):
 
     fallback_response = {
         "category": "caution",
-        "title": "🔌 Connection Error",
-        "grandma_reply": "❤️ Nana, my brain is having trouble connecting. Please try again in a moment! ❤️"
+        "title": "🔌 Gangguan Jaringan",
+        "grandma_reply": "❤️ sistemnya sedang agak lambat atau susah nyambung. Coba lagi sebentar lagi ya! ❤️"
     }
 
     try:
@@ -336,8 +336,8 @@ async def analyze(payload: dict, request: Request):
             "category": category,
             "is_ai": analysis_data.get("is_ai", False),
             "dominant_language": analysis_data.get("dominant_language", "id"),
-            "title": empathy_data.get("title", "Check Results"),
-            "grandma_reply": empathy_data.get("grandma_reply", "Something went wrong. ❤️")
+            "title": empathy_data.get("title", "Hasil Pengecekan"),
+            "grandma_reply": empathy_data.get("grandma_reply", "Ada sedikit masalah, Eyang. Coba kirim ulang gambarnya ya. ❤️")
         }
 
     except HTTPException:
