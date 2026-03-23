@@ -27,7 +27,7 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S"
 )
-logger = logging.getLogger("NotMyNana")
+logger = logging.getLogger("JagaEyang")
 
 load_dotenv()
 
@@ -43,7 +43,7 @@ if not NOVA_API_KEY:
     logger.critical("❌ NOVA_API_KEY is missing from environment variables!")
     raise RuntimeError("NOVA_API_KEY environment variable is missing")
 
-app = FastAPI(title="Not My Nana ❤️")
+app = FastAPI(title="Jaga Eyang ❤️")
 templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
@@ -156,8 +156,8 @@ async def health():
 @app.get("/manifest.json")
 async def manifest():
     return JSONResponse({
-        "name": "Not My Nana",
-        "short_name": "Not My Nana",
+        "name": "Jaga Eyang",
+        "short_name": "Jaga Eyang",
         "description": "Protecting our loved ones from digital scams.",
         "start_url": "/",
         "display": "standalone",
@@ -358,5 +358,5 @@ async def analyze(payload: dict, request: Request):
 if __name__ == "__main__":
     import uvicorn
     port = int(os.environ.get("PORT", 8000))
-    logger.info(f"🚀 Not My Nana starting on port {port}")
+    logger.info(f"🚀 Jaga Eyang starting on port {port}")
     uvicorn.run(app, host="0.0.0.0", port=port)
