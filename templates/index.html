@@ -238,8 +238,8 @@
         function shareToWhatsApp(title, reply) {
             const message = `Halo anak/cucu ❤️\n\n` +
                             `Eyang baru saja cek pesan di aplikasi *Jaga Eyang*:\n\n` +
-                            `*${title}*\n` +
-                            `_"${reply}"_\n\n` +
+                            `*${title.trim()}*\n` +
+                            `"${reply.trim()}"\n\n` +
                             `Mohon bantuannya untuk cek kembali ya. Terima kasih!`;
             
             const waLink = `https://wa.me/?text=${encodeURIComponent(message)}`;
@@ -290,12 +290,15 @@
             document.getElementById('result').innerHTML = `
                 <div class="result ${className}">
                     <span class="result-title">${escapeHtml(data.title)}</span> 
-                    <span class="result-text">${escapeHtml(data.grandma_reply)}</span>
+                    <span class="result-text" lang="${lang}">${escapeHtml(data.grandma_reply)}</span>
                     
-                    <button onclick="shareToWhatsApp('${escapeAttr(data.title)}', '${escapeAttr(data.grandma_reply)}')" 
-                            style="margin-top: 25px; padding: 18px; width: 100%; font-size: 20px; 
-                                background: #25D366; color: white; border: none; border-radius: 18px; 
-                                font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(37,211,102, 0.2);">
+                    <button 
+                        data-title="${escapeAttr(data.title)}" 
+                        data-reply="${escapeAttr(data.grandma_reply)}"
+                        onclick="shareToWhatsApp(this.dataset.title, this.dataset.reply)"
+                        style="margin-top: 25px; padding: 18px; width: 100%; font-size: 20px; 
+                            background: #25D366; color: white; border: none; border-radius: 18px; 
+                            font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(37,211,102, 0.2);">
                         📲 Kirim ke Anak/Cucu via WA
                     </button>
                 </div>
@@ -451,10 +454,13 @@
                             <span class="result-title">${escapeHtml(data.title)}</span> 
                             <span class="result-text" lang="${lang}">${escapeHtml(data.grandma_reply)}</span>
                             
-                            <button onclick="shareToWhatsApp('${escapeAttr(data.title)}', '${escapeAttr(data.grandma_reply)}')" 
-                                    style="margin-top: 25px; padding: 18px; width: 100%; font-size: 20px; 
-                                        background: #25D366; color: white; border: none; border-radius: 18px; 
-                                        font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(37,211,102, 0.2);">
+                            <button 
+                                data-title="${escapeAttr(data.title)}" 
+                                data-reply="${escapeAttr(data.grandma_reply)}"
+                                onclick="shareToWhatsApp(this.dataset.title, this.dataset.reply)"
+                                style="margin-top: 25px; padding: 18px; width: 100%; font-size: 20px; 
+                                    background: #25D366; color: white; border: none; border-radius: 18px; 
+                                    font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(37,211,102, 0.2);">
                                 📲 Kirim ke Anak/Cucu via WA
                             </button>
                         </div>
