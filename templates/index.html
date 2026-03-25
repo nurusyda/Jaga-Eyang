@@ -246,6 +246,24 @@
             window.open(waLink, '_blank');
         }
 
+        function createWhatsAppButton(title, reply) {
+            return `
+                <button 
+                    data-title="${escapeAttr(title)}" 
+                    data-reply="${escapeAttr(reply)}"
+                    onclick="shareToWhatsApp(this.dataset.title, this.dataset.reply)"
+                    onmousedown="this.style.transform='scale(0.96)'" 
+                    onmouseup="this.style.transform='scale(1)'"
+                    ontouchstart="this.style.transform='scale(0.96)'"
+                    ontouchend="this.style.transform='scale(1)'"
+                    style="margin-top: 25px; padding: 18px; width: 100%; font-size: 20px; 
+                        background: #25D366; color: white; border: none; border-radius: 18px; 
+                        font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(37,211,102, 0.2);
+                        transition: transform 0.1s ease;">
+                    📲 Kirim ke Anak/Cucu via WA
+                </button>`;
+        }
+
         function getResultType(data) {
             if (data.category) {
                 if (data.category === 'ai_image') return 'ai-picture';
@@ -289,26 +307,12 @@
             const className = getResultType(data);
             const lang = data.dominant_language || "id";
             document.getElementById('result').innerHTML = `
-                    <div class="result ${className}">
-                        <span class="result-title">${escapeHtml(data.title)}</span> 
-                        <span class="result-text" lang="${lang}">${escapeHtml(data.grandma_reply)}</span>
-                        
-                        <button 
-                            data-title="${escapeAttr(data.title)}" 
-                            data-reply="${escapeAttr(data.grandma_reply)}"
-                            onclick="shareToWhatsApp(this.dataset.title, this.dataset.reply)"
-                            onmousedown="this.style.transform='scale(0.96)'" 
-                            onmouseup="this.style.transform='scale(1)'"
-                            ontouchstart="this.style.transform='scale(0.96)'"
-                            ontouchend="this.style.transform='scale(1)'"
-                            style="margin-top: 25px; padding: 18px; width: 100%; font-size: 20px; 
-                                background: #25D366; color: white; border: none; border-radius: 18px; 
-                                font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(37,211,102, 0.2);
-                                transition: transform 0.1s ease;">
-                            📲 Kirim ke Keluarga via WA
-                        </button>
-                    </div>
-                `;
+                <div class="result ${className}">
+                    <span class="result-title">${escapeHtml(data.title)}</span> 
+                    <span class="result-text" lang="${lang}">${escapeHtml(data.grandma_reply)}</span>
+                    ${createWhatsAppButton(data.title, data.grandma_reply)}
+                </div>
+            `;
                 saveToHistory(data);
         }
 
@@ -453,27 +457,12 @@
                     document.getElementById('loading').style.display = 'none';
 
                     const className = getResultType(data);
-                    const lang = data.dominant_language || "en"; // Get detected lang or default to en
-
+                    const lang = data.dominant_language || "id";
                     document.getElementById('result').innerHTML = `
                         <div class="result ${className}">
                             <span class="result-title">${escapeHtml(data.title)}</span> 
                             <span class="result-text" lang="${lang}">${escapeHtml(data.grandma_reply)}</span>
-                            
-                            <button 
-                                data-title="${escapeAttr(data.title)}" 
-                                data-reply="${escapeAttr(data.grandma_reply)}"
-                                onclick="shareToWhatsApp(this.dataset.title, this.dataset.reply)"
-                                onmousedown="this.style.transform='scale(0.96)'" 
-                                onmouseup="this.style.transform='scale(1)'"
-                                ontouchstart="this.style.transform='scale(0.96)'"
-                                ontouchend="this.style.transform='scale(1)'"
-                                style="margin-top: 25px; padding: 18px; width: 100%; font-size: 20px; 
-                                    background: #25D366; color: white; border: none; border-radius: 18px; 
-                                    font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(37,211,102, 0.2);
-                                    transition: transform 0.1s ease;">
-                                📲 Kirim ke Keluarga via WA
-                            </button>
+                            ${createWhatsAppButton(data.title, data.grandma_reply)}
                         </div>
                     `;
                     saveToHistory(data, thumbB64);
