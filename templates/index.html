@@ -332,7 +332,7 @@
                 type: getResultType(data),
                 image: thumbB64,
                 confidence: Number(data.scam_probability) || 0,
-                lang: data.dominant_language || "en",
+                lang: data.dominant_language || "id",
             });
 
             if (history.length > 3) history.pop();
