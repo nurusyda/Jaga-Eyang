@@ -245,7 +245,7 @@
                             `Mohon bantuannya untuk cek kembali ya. Terima kasih!`;
             
             const waLink = `https://wa.me/?text=${encodeURIComponent(message)}`;
-            window.open(waLink, '_blank');
+            window.open(waLink, '_blank', 'noopener,noreferrer');
         }
 
         function createWhatsAppButton(title = '', reply = '') {
