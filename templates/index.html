@@ -236,15 +236,18 @@
         }
 
         function shareToWhatsApp(title = '', reply = '') {
-            const safeTitle = String(title || '').trim();
-            const safeReply = String(reply || '').trim();
+            const cleanText = (str) => {
+                return str.replace(/[^\x00-\x7F\u00a0-\u00ff\u2000-\u206f\u20a0-\u20cf\u2100-\u218f\u2460-\u24ff\u25a0-\u25ff\u2600-\u26ff\u2700-\u27bf\u3000-\u303f\ud83c-\ud83e\udc00-\udfff]/g, '');
+                };
+            let safeTitle = String(title || '').trim();
+            let safeReply = String(reply || '').trim();
             const message = `Halo anak/cucu ❤️\n\n` +
                             `Eyang baru saja cek pesan di aplikasi *Jaga Eyang*:\n\n` +
-                            `*${safeTitle}*\n` +
-                            `"${safeReply}"\n\n` +
-                            `Mohon bantuannya untuk cek kembali ya. Terima kasih!`;
+                            `*HASIL:* ${safeTitle}\n` +
+                            `*PESAN:* "${safeReply}"\n\n` +
+                            `Tolong Eyang ya, coba kamu cek foto aslinya. Eyang kirim fotonya setelah pesan ini ya! Terima kasih! ❤️`;
             
-            const waLink = `https://wa.me/?text=${encodeURIComponent(message)}`;
+            const waLink = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
             window.open(waLink, '_blank', 'noopener,noreferrer');
         }
 
