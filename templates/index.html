@@ -239,8 +239,8 @@
             const cleanText = (str) => {
                 return str.replace(/[^\x00-\x7F\u00a0-\u00ff\u2000-\u206f\u20a0-\u20cf\u2100-\u218f\u2460-\u24ff\u25a0-\u25ff\u2600-\u26ff\u2700-\u27bf\u3000-\u303f\ud83c-\ud83e\udc00-\udfff]/g, '');
                 };
-            let safeTitle = String(title || '').trim();
-            let safeReply = String(reply || '').trim();
+            let safeTitle = cleanText(String(title || '').trim());
+            let safeReply = cleanText(String(reply || '').trim());
             const message = `Halo anak/cucu ❤️\n\n` +
                             `Eyang baru saja cek pesan di aplikasi *Jaga Eyang*:\n\n` +
                             `*HASIL:* ${safeTitle}\n` +
@@ -379,7 +379,7 @@
                 const displayReply = rawReply.substring(0, 40) + (rawReply.length > 40 ? '...' : '');
                 
                 // --- NEW: Retrieve the saved language ---
-                const itemLang = item.lang || "en";
+                const itemLang = item.lang || "id";
                 
                 // Escape once for the attribute
                 const safeAlt = escapeAttr(`Preview of recent check: ${displayReply}`);
