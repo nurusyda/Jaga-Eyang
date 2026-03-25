@@ -235,6 +235,17 @@
                 .replace(/>/g, '&gt;');
         }
 
+        function shareToWhatsApp(title, reply) {
+            const message = `Halo anak/cucu ❤️\n\n` +
+                            `Eyang baru saja cek pesan di aplikasi *Jaga Eyang*:\n\n` +
+                            `*${title}*\n` +
+                            `_"${reply}"_\n\n` +
+                            `Mohon bantuannya untuk cek kembali ya. Terima kasih!`;
+            
+            const waLink = `https://wa.me/?text=${encodeURIComponent(message)}`;
+            window.open(waLink, '_blank');
+        }
+
         function getResultType(data) {
             if (data.category) {
                 if (data.category === 'ai_image') return 'ai-picture';
@@ -278,8 +289,15 @@
             const className = getResultType(data);
             document.getElementById('result').innerHTML = `
                 <div class="result ${className}">
-                    <span class="result-title">${escapeHtml(data.title)}</span>
-                    <span <span class="result-text" lang="${escapeAttr(data.dominant_language || 'id')}">${escapeHtml(data.grandma_reply)}</span>
+                    <span class="result-title">${escapeHtml(data.title)}</span> 
+                    <span class="result-text">${escapeHtml(data.grandma_reply)}</span>
+                    
+                    <button onclick="shareToWhatsApp('${escapeAttr(data.title)}', '${escapeAttr(data.grandma_reply)}')" 
+                            style="margin-top: 25px; padding: 18px; width: 100%; font-size: 20px; 
+                                background: #25D366; color: white; border: none; border-radius: 18px; 
+                                font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(37,211,102, 0.2);">
+                        📲 Kirim ke Anak/Cucu via WA
+                    </button>
                 </div>
             `;
             saveToHistory(data);
@@ -432,6 +450,13 @@
                         <div class="result ${className}">
                             <span class="result-title">${escapeHtml(data.title)}</span> 
                             <span class="result-text" lang="${lang}">${escapeHtml(data.grandma_reply)}</span>
+                            
+                            <button onclick="shareToWhatsApp('${escapeAttr(data.title)}', '${escapeAttr(data.grandma_reply)}')" 
+                                    style="margin-top: 25px; padding: 18px; width: 100%; font-size: 20px; 
+                                        background: #25D366; color: white; border: none; border-radius: 18px; 
+                                        font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(37,211,102, 0.2);">
+                                📲 Kirim ke Anak/Cucu via WA
+                            </button>
                         </div>
                     `;
                     saveToHistory(data, thumbB64);
