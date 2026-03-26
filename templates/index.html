@@ -235,6 +235,42 @@
                 .replace(/>/g, '&gt;');
         }
 
+        function shareToWhatsApp(title = '', reply = '') {
+            const cleanText = (str) => {
+                return str.replace(/[^\x00-\x7F\u00a0-\u00ff\u2000-\u206f\u20a0-\u20cf\u2100-\u218f\u2460-\u24ff\u25a0-\u25ff\u2600-\u26ff\u2700-\u27bf\u3000-\u303f\ud83c-\ud83e\udc00-\udfff]/g, '');
+                };
+            let safeTitle = cleanText(String(title || '').trim());
+            let safeReply = cleanText(String(reply || '').trim());
+            const message = `Halo anak/cucu ❤️\n\n` +
+                            `Eyang baru saja cek pesan di aplikasi *Jaga Eyang*:\n\n` +
+                            `*HASIL:* ${safeTitle}\n` +
+                            `*PESAN:* "${safeReply}"\n\n` +
+                            `Tolong Eyang ya, coba kamu cek foto aslinya. Eyang kirim fotonya setelah pesan ini ya! Terima kasih! ❤️`;
+            
+            const waLink = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
+            window.open(waLink, '_blank', 'noopener,noreferrer');
+        }
+
+        function createWhatsAppButton(title = '', reply = '') {
+            const safeTitle = escapeAttr(String(title || ''));
+            const safeReply = escapeAttr(String(reply || ''));
+            return `
+                <button 
+                    data-title="${safeTitle}"
+                    data-reply="${safeReply}"
+                    onclick="shareToWhatsApp(this.dataset.title, this.dataset.reply)"
+                    onmousedown="this.style.transform='scale(0.96)'" 
+                    onmouseup="this.style.transform='scale(1)'"
+                    ontouchstart="this.style.transform='scale(0.96)'"
+                    ontouchend="this.style.transform='scale(1)'"
+                    style="margin-top: 25px; padding: 18px; width: 100%; font-size: 20px; 
+                        background: #25D366; color: white; border: none; border-radius: 18px; 
+                        font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(37,211,102, 0.2);
+                        transition: transform 0.1s ease;">
+                    📲 Kirim ke Anak/Cucu via WA
+                </button>`;
+        }
+
         function getResultType(data) {
             if (data.category) {
                 if (data.category === 'ai_image') return 'ai-picture';
@@ -276,10 +312,12 @@
             }
 
             const className = getResultType(data);
+            const lang = data.dominant_language || "id";
             document.getElementById('result').innerHTML = `
                 <div class="result ${className}">
-                    <span class="result-title">${escapeHtml(data.title)}</span>
-                    <span <span class="result-text" lang="${escapeAttr(data.dominant_language || 'id')}">${escapeHtml(data.grandma_reply)}</span>
+                    <span class="result-title">${escapeHtml(data.title)}</span> 
+                    <span class="result-text" lang="${lang}">${escapeHtml(data.grandma_reply)}</span>
+                    ${createWhatsAppButton(data.title, data.grandma_reply)}
                 </div>
             `;
             saveToHistory(data);
@@ -301,7 +339,7 @@
                 type: getResultType(data),
                 image: thumbB64,
                 confidence: Number(data.scam_probability) || 0,
-                lang: data.dominant_language || "en",
+                lang: data.dominant_language || "id",
             });
 
             if (history.length > 3) history.pop();
@@ -341,7 +379,7 @@
                 const displayReply = rawReply.substring(0, 40) + (rawReply.length > 40 ? '...' : '');
                 
                 // --- NEW: Retrieve the saved language ---
-                const itemLang = item.lang || "en";
+                const itemLang = item.lang || "id";
                 
                 // Escape once for the attribute
                 const safeAlt = escapeAttr(`Preview of recent check: ${displayReply}`);
@@ -426,12 +464,12 @@
                     document.getElementById('loading').style.display = 'none';
 
                     const className = getResultType(data);
-                    const lang = data.dominant_language || "en"; // Get detected lang or default to en
-
+                    const lang = data.dominant_language || "id";
                     document.getElementById('result').innerHTML = `
                         <div class="result ${className}">
                             <span class="result-title">${escapeHtml(data.title)}</span> 
                             <span class="result-text" lang="${lang}">${escapeHtml(data.grandma_reply)}</span>
+                            ${createWhatsAppButton(data.title, data.grandma_reply)}
                         </div>
                     `;
                     saveToHistory(data, thumbB64);
