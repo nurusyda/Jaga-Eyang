@@ -178,7 +178,7 @@ Temp   : 0.0
 
 ```bash
 # Clone repository
-git clone https://github.com/[username]/jaga-eyang.git
+git clone https://github.com/nurusyda/jaga-eyang.git
 cd jaga-eyang
 
 # Install dependencies
