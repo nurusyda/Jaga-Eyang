@@ -54,15 +54,15 @@ Jaga Eyang hadir untuk memberdayakan mereka — bukan menghakimi, tapi mendampin
 
 | Beranda (Mode Terang) | Beranda (Mode Gelap) | Loading |
 |---|---|---|
-| ![Beranda Terang](Screenshots/Homepage_Light_Mode.png) | ![Beranda Gelap](Screenshots/Homepage_Dark_Mode.png) | ![Loading](Screenshots/Loading.png) |
+| ![Beranda Terang] (https://raw.githubusercontent.com/nurusyda/Jaga-Eyang/main/Screenshots/Homepage%2C%20day%20mode.jpeg) | ![Beranda Gelap](https://raw.githubusercontent.com/nurusyda/Jaga-Eyang/main/Screenshots/Homepage%2C%20dark%20mode.jpeg) | ![Loading](https://raw.githubusercontent.com/nurusyda/Jaga-Eyang/main/Screenshots/Loading%2C%20day%20mode.jpeg) |
 
 | ❌ Bahaya (Scam) | ✅ Aman | 📰 Viral (Clickbait) |
 |---|---|---|
-| ![Scam](Screenshots/Red_Scam.png) | ![Aman](Screenshots/Green_Safe.png) | ![Viral](Screenshots/Yellow_Viral.png) |
+| ![Scam](https://raw.githubusercontent.com/nurusyda/Jaga-Eyang/main/Screenshots/Bahaya.jpeg) | ![Aman](https://raw.githubusercontent.com/nurusyda/Jaga-Eyang/main/Screenshots/Aman.jpeg) | ![Viral](https://raw.githubusercontent.com/nurusyda/Jaga-Eyang/main/Screenshots/Viral.jpeg) |
 
 | 👨‍👩‍👧‍👦 Sensitif | 🤖 Gambar AI | 📜 Riwayat & WhatsApp |
 |---|---|---|
-| ![Sensitif](Screenshots/Purple_Sensitive.png) | ![AI Image](Screenshots/Grey_AI_Image.png) | ![Riwayat](Screenshots/History_WhatsApp.png) |
+| ![Sensitif](https://raw.githubusercontent.com/nurusyda/Jaga-Eyang/main/Screenshots/Sensitive.jpeg) | ![AI Image](https://raw.githubusercontent.com/nurusyda/Jaga-Eyang/main/Screenshots/Gambar%20AI.jpeg) | ![Riwayat](https://raw.githubusercontent.com/nurusyda/Jaga-Eyang/main/Screenshots/History.jpeg) |
 
 ---
 
