@@ -271,7 +271,7 @@ jaga-eyang/
 |---|---|---|---|---|---|---|
 | Analisis screenshot | ✅ | ❌ | ❌ | ❌ |  ❌ |
 | Redaksi PII otomatis | ✅ | ❌ | ❌ | ❌ |  ❌ |
-| Antarmuka khusus lansia | ✅ | ❌ | ❌ | ❌ | | ❌ |
+| Antarmuka khusus lansia | ✅ | ❌ | ❌ | ❌ | ❌ |
 | Tanpa instalasi/login | ✅ | ❌ | ❌ | ❌ |  ✅ |
 | Deteksi gambar AI | ✅ | ❌ | ❌ | ❌ |  ❌ |
 | Gratis untuk pengguna | ✅ | ✅ | ❌ | ❌ | ✅ |
