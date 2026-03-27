@@ -267,15 +267,15 @@ jaga-eyang/
 
 ## 📊 Perbandingan dengan Solusi Lain
 
-| Fitur | Jaga Eyang | Kredibel | Truecaller | SATSPAM+ | tanya.fadli.id | CekRekening.id |
+| Fitur | Jaga Eyang | Kredibel | Truecaller | SATSPAM+ |  CekRekening.id |
 |---|---|---|---|---|---|---|
-| Analisis screenshot | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ |
-| Redaksi PII otomatis | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Antarmuka khusus lansia | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Tanpa instalasi/login | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ |
-| Deteksi gambar AI | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Gratis untuk pengguna | ✅ | ✅ | ❌ | ❌ | ✅ | ✅ |
-| Operator-agnostic | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ |
+| Analisis screenshot | ✅ | ❌ | ❌ | ❌ |  ❌ |
+| Redaksi PII otomatis | ✅ | ❌ | ❌ | ❌ |  ❌ |
+| Antarmuka khusus lansia | ✅ | ❌ | ❌ | ❌ | | ❌ |
+| Tanpa instalasi/login | ✅ | ❌ | ❌ | ❌ |  ✅ |
+| Deteksi gambar AI | ✅ | ❌ | ❌ | ❌ |  ❌ |
+| Gratis untuk pengguna | ✅ | ✅ | ❌ | ❌ | ✅ |
+| Operator-agnostic | ✅ | ✅ | ✅ | ❌ | ✅ |
 
 > **Catatan:** CekRekening.id (Kominfo) adalah alat pelaporan reaktif yang memerlukan input nomor rekening/telepon secara manual. Jaga Eyang bersifat proaktif dan komplementer — menganalisis konten pesan secara otomatis sebelum pengguna mengetahui adanya nomor mencurigakan.
 
