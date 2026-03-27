@@ -269,11 +269,11 @@ jaga-eyang/
 
 | Fitur | Jaga Eyang | Kredibel | Truecaller | SATSPAM+ |  CekRekening.id |
 |---|---|---|---|---|---|---|
-| Analisis screenshot | ✅ | ❌ | ❌ | ❌ |  ❌ |
-| Redaksi PII otomatis | ✅ | ❌ | ❌ | ❌ |  ❌ |
+| Analisis screenshot | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Redaksi PII otomatis | ✅ | ❌ | ❌ | ❌ | ❌ |
 | Antarmuka khusus lansia | ✅ | ❌ | ❌ | ❌ | ❌ |
-| Tanpa instalasi/login | ✅ | ❌ | ❌ | ❌ |  ✅ |
-| Deteksi gambar AI | ✅ | ❌ | ❌ | ❌ |  ❌ |
+| Tanpa instalasi/login | ✅ | ❌ | ❌ | ❌ | ✅ |
+| Deteksi gambar AI | ✅ | ❌ | ❌ | ❌ | ❌ |
 | Gratis untuk pengguna | ✅ | ✅ | ❌ | ❌ | ✅ |
 | Operator-agnostic | ✅ | ✅ | ✅ | ❌ | ✅ |
 
