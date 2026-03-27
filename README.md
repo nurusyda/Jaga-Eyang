@@ -54,7 +54,7 @@ Jaga Eyang hadir untuk memberdayakan mereka — bukan menghakimi, tapi mendampin
 
 | Beranda (Mode Terang) | Beranda (Mode Gelap) | Loading |
 |---|---|---|
-| ![Beranda Terang] (https://raw.githubusercontent.com/nurusyda/Jaga-Eyang/main/Screenshots/Homepage%2C%20day%20mode.jpeg) | ![Beranda Gelap](https://raw.githubusercontent.com/nurusyda/Jaga-Eyang/main/Screenshots/Homepage%2C%20dark%20mode.jpeg) | ![Loading](https://raw.githubusercontent.com/nurusyda/Jaga-Eyang/main/Screenshots/Loading%2C%20day%20mode.jpeg) |
+| ![Beranda Terang](https://raw.githubusercontent.com/nurusyda/Jaga-Eyang/main/Screenshots/Homepage%2C%20day%20mode.jpeg) | ![Beranda Gelap](https://raw.githubusercontent.com/nurusyda/Jaga-Eyang/main/Screenshots/Homepage%2C%20dark%20mode.jpeg) | ![Loading](https://raw.githubusercontent.com/nurusyda/Jaga-Eyang/main/Screenshots/Loading%2C%20day%20mode.jpeg) |
 
 | ❌ Bahaya (Scam) | ✅ Aman | 📰 Viral (Clickbait) |
 |---|---|---|
