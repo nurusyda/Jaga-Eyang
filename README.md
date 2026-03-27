@@ -268,7 +268,7 @@ jaga-eyang/
 ## 📊 Perbandingan dengan Solusi Lain
 
 | Fitur | Jaga Eyang | Kredibel | Truecaller | SATSPAM+ |  CekRekening.id |
-|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|
 | Analisis screenshot | ✅ | ❌ | ❌ | ❌ | ❌ |
 | Redaksi PII otomatis | ✅ | ❌ | ❌ | ❌ | ❌ |
 | Antarmuka khusus lansia | ✅ | ❌ | ❌ | ❌ | ❌ |
